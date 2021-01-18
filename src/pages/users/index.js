@@ -1,6 +1,6 @@
 // import {useState, useEffect} from 'react'
-import Link from 'next/link'
-export default function users({users}) {
+import Link from 'next/link';
+export default function users({ users }) {
   // const [users, setUsers] = useState([])
   // const [error, setError] = useState('')
 
@@ -13,26 +13,24 @@ export default function users({users}) {
   //         });
   // }, []);
 
-  
   return (
     <div>
       Testing
-          <ul>
-            {users.map(user => (
-              <li key={user.id}>
-                <Link href={`/users/${user.company.name}/${user.id}`}>
-                <a>
-                  {user.username} Page
-                </a>
-                </Link>
-              </li>
-            ))}
-          </ul>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>
+            <Link href={`/users/${user.company.name}/${user.id}`}>
+              <a>{user.username} Page</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+      <Link href='/'>Back to Home</Link>
     </div>
-  )
+  );
 }
 users.getInitialProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
-  const users = await res.json()
-  return {users}
-}
+  const res = await fetch('https://jsonplaceholder.typicode.com/users');
+  const users = await res.json();
+  return { users };
+};

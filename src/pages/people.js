@@ -1,28 +1,27 @@
-import Link from 'next/link'
+import Link from 'next/link';
 export default function people() {
-    
   const people = [
     {
       vehicle: 'Car',
-      owner: 'Ramzi'
+      owner: 'Ramzi',
     },
     {
       vehicle: 'Jet',
-      owner: 'Ali'
+      owner: 'Ali',
     },
     {
       vehicle: 'Bike',
-      owner: 'Houcem'
+      owner: 'Houcem',
     },
     {
       vehicle: 'Boat',
-      owner: 'Abdallah'
+      owner: 'Abdallah',
     },
-  ]
+  ];
   return (
     <div>
       <ul>
-        {people.map( person => {
+        {people.map((person) => {
           return (
             <li key={person.owner}>
               <Link href={`/${person.vehicle}/${person.owner}`}>
@@ -31,10 +30,12 @@ export default function people() {
                 </a>
               </Link>
             </li>
-        )})
-        }
-        
+          );
+        })}
       </ul>
+      <Link href='/'>
+        <a> Back to Home </a>
+      </Link>
     </div>
-  )
+  );
 }
