@@ -1,5 +1,6 @@
 import Link from 'next/link'
-export default function Home() {
+export default function people() {
+    
   const people = [
     {
       vehicle: 'Car',
@@ -20,7 +21,6 @@ export default function Home() {
   ]
   return (
     <div>
-      Home
       <ul>
         {people.map( person => {
           return (
